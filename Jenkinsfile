@@ -17,7 +17,8 @@ node {
 
 	stage('Push image') {
 		docker.withRegistry('https://ragnarok.earthnet.ai', 'ragnarok-credentials') {
-			app.push('latest')
+			app.push("{env.BRANCH_NAME}-latest")
+			app.push("{env.BRANCH_NAME}-${env.BUILD_NUMBER}")
 		}
 	}
 
