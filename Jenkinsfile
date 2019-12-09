@@ -6,7 +6,7 @@ node {
 	}
 
 	stage('Build image') {
-		app = docker.build("alpapapo/example-app")
+		app = docker.build("ragnarok.earthnet.ai/example-app")
 	}
 
 	stage('Test') {
